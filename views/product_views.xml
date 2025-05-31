@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Product Search View - Fixed Version -->
+    <record id="view_product_product_search_portal" model="ir.ui.view">
+        <field name="name">product.product.search.portal</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_template_search_view"/>
+        <field name="arch" type="xml">
+            <!-- Safely add POS availability filter inside the <search> tag -->
+            <xpath expr="//search" position="inside">
+                <filter name="available_in_pos" string="Available in POS"
+                        domain="[('available_in_pos','=',True)]"/>
+            </xpath>
+
+            <!-- Add POS price field after name field -->
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="pos_price" string="POS Price"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Product Form View -->
+    <record id="view_product_product_form_portal" model="ir.ui.view">
+        <field name="name">product.product.form.portal</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_ok']" position="after">
+                <group>
+                    <field name="available_in_pos"/>
+                    <field name="pos_price" string="POS Price"/>
+                    <field name="pos_category_id" string="POS Category"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Portal Product List View -->
+    <record id="view_product_product_list_portal" model="ir.ui.view">
+        <field name="name">product.product.list.portal</field>
+        <field name="model">product.product</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="default_code" string="SKU"/>
+                <field name="name"/>
+                <field name="barcode"/>
+                <field name="lst_price" string="Sales Price"/>
+                <field name="pos_price" string="POS Price"/>
+                <field name="available_in_pos" invisible="1"/>
+                <field name="qty_available" string="On Hand"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

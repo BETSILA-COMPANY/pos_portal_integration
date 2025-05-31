@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_order_tree_portal" model="ir.ui.view">
+        <field name="name">pos.order.tree.portal</field>
+        <field name="model">pos.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="date_order"/>
+                <field name="partner_id"/>
+                <field name="amount_total"/>
+                <field name="portal_state" widget="statusbar" 
+                       statusbar_visible="draft,submitted,confirmed,paid,canceled"/>
+                <field name="portal_user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_pos_order_form_portal" model="ir.ui.view">
+        <field name="name">pos.order.form.portal</field>
+        <field name="model">pos.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="date_order"/>
+                        <field name="portal_state" widget="statusbar" 
+                               statusbar_visible="draft,submitted,confirmed,paid,canceled"/>
+                        <field name="portal_user_id" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Order Lines">
+                            <field name="lines">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="qty"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Payments">
+                            <field name="payment_ids">
+                                <tree>
+                                    <field name="amount"/>
+                                    <field name="payment_method_id"/>
+                                    <field name="payment_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <!-- Removed the chatter section since pos.order doesn't support it by default -->
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for POS Portal Orders -->
+    <record id="action_pos_portal_orders" model="ir.actions.act_window">
+        <field name="name">Portal POS Orders</field>
+        <field name="res_model">pos.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('portal_order', '=', True)]</field>
+        <field name="context">{'default_portal_order': True}</field>
+        <field name="search_view_id" ref="point_of_sale.view_pos_order_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No portal orders found. Customers can submit orders through the portal.
+            </p>
+        </field>
+    </record>
+
+    <!-- Add to POS Order menu -->
+    <menuitem id="menu_pos_portal_orders" 
+              name="Portal Orders"
+              parent="point_of_sale.menu_point_of_sale"
+              action="action_pos_portal_orders"
+              sequence="30"/>
+</odoo>
