@@ -56,7 +56,7 @@
     'images': [
         'static/description/icon.png', # Your module's icon
         'static/description/banner.png', # Optional: A banner image for the top of the listing
-        'description/index.html', 
+        'description/index.html',
         'static/description/screenshots/screenshot_1.png',
         'static/description/screenshots/screenshot_2.png',
         'static/description/screenshots/screenshot_3.png',
