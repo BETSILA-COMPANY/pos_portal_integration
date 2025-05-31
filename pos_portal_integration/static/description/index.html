@@ -4,6 +4,117 @@
     <meta charset="UTF-8">
     <title>POS Portal Integration - Customer Self-Service Ordering</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Essential styling for Odoo App Store module descriptions */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .oe_container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .oe_slogan {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        h1.oe_slogan {
+            font-size: 2.5em;
+            color: #212529;
+            margin-top: 20px;
+        }
+        h2.oe_slogan {
+            font-size: 2em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        h3.oe_slogan {
+            font-size: 1.5em;
+            color: #6c757d;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        
+        /* Flexbox for robust column layout (crucial for preventing overlaps) */
+        .oe_row {
+            display: flex; 
+            flex-wrap: wrap; 
+            margin-left: -10px; /* Counteract padding on columns */
+            margin-right: -10px; /* Counteract padding on columns */
+        }
+        .oe_span12, .oe_span6, .oe_span4 {
+            box-sizing: border-box;
+            padding: 10px;
+        }
+        .oe_span12 { width: 100%; }
+        .oe_span6 { flex: 0 0 50%; max-width: 50%; } 
+        .oe_span4 { flex: 0 0 33.3333%; max-width: 33.3333%; } 
+
+        /* Image sizing within columns (crucial for preventing images from being too large/overlapping) */
+        .oe_picture img, .oe_screenshot img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            
+            /* Control screenshot max height */
+            max-height: 250px; /* Adjust this value as needed to make them smaller or larger */
+            object-fit: contain; /* Ensures the image fits within the bounds without cropping */
+        }
+        .oe_demo {
+            margin-bottom: 20px;
+        }
+        .text-center {
+            text-align: center;
+        }
+        .btn-primary {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .support-info {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .support-info a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .support-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <section class="oe_container oe_dark">
@@ -92,7 +203,7 @@
                 <p class="text-center">New 'POS Orders' section in the portal.</p>
             </div>
             <div class="oe_span4">
-                <img src="hdevelop_4.png">
+                <img src="develop_4.png">
                 <p class="text-center">Draft POS orders in the Odoo backend.</p>
             </div>
             <div class="oe_span4">
