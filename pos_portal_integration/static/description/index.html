@@ -1,237 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>POS Portal Integration - Customer Self-Service Ordering</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Essential styling for Odoo App Store module descriptions */
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        .oe_container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            border-radius: 8px;
-        }
-        .oe_slogan {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-        h1.oe_slogan {
-            font-size: 2.5em;
-            color: #212529;
-            margin-top: 20px;
-        }
-        h2.oe_slogan {
-            font-size: 2em;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 30px;
-        }
-        h3.oe_slogan {
-            font-size: 1.5em;
-            color: #6c757d;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        ul, ol {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        
-        /* Flexbox for robust column layout (crucial for preventing overlaps) */
-        .oe_row {
-            display: flex; 
-            flex-wrap: wrap; 
-            margin-left: -10px; /* Counteract padding on columns */
-            margin-right: -10px; /* Counteract padding on columns */
-        }
-        .oe_span12, .oe_span6, .oe_span4 {
-            box-sizing: border-box;
-            padding: 10px;
-        }
-        .oe_span12 { width: 100%; }
-        .oe_span6 { flex: 0 0 50%; max-width: 50%; } 
-        .oe_span4 { flex: 0 0 33.3333%; max-width: 33.3333%; } 
+<section class="oe_container">
+  <div class="oe_row oe_spaced">
+    <h2 class="oe_slogan">Screenshots</h2>
 
-        /* Image sizing within columns (crucial for preventing images from being too large/overlapping) */
-        .oe_picture img, .oe_screenshot img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-            
-            /* Control screenshot max height */
-            max-height: 250px; /* Adjust this value as needed to make them smaller or larger */
-            object-fit: contain; /* Ensures the image fits within the bounds without cropping */
-        }
-        .oe_demo {
-            margin-bottom: 20px;
-        }
-        .text-center {
-            text-align: center;
-        }
-        .btn-primary {
-            display: inline-block;
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 15px;
-            transition: background-color 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .support-info {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 30px;
-        }
-        .support-info a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .support-info a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <section class="oe_container oe_dark">
-        <div class="oe_row oe_spaced text-center">
-            <h1 class="oe_slogan">POS Portal Integration for Customer Orders</h1>
-            <h3 class="oe_slogan">Empower Your Customers with Self-Service Point of Sale Ordering</h3>
-            <p class="oe_mt32">
-                This module revolutionizes your Odoo Point of Sale experience by allowing your registered customers to create POS orders directly from their personalized portal account. Seamlessly integrated with your existing Odoo setup, it enhances customer convenience, reduces manual order entry for your staff, and provides a streamlined ordering process accessible 24/7.
-            </p>
-            <a class="btn-primary" href="#features">Learn More</a>
-        </div>
-    </section>
+    <!-- Screenshot Row 1 -->
+    <div class="oe_row">
+      <div class="oe_span4">
+        <img src="develop_1.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">Product selection in the customer portal.</p>
+      </div>
+      <div class="oe_span4">
+        <img src="develop_2.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">Order confirmation and summary.</p>
+      </div>
+      <div class="oe_span4">
+        <img src="develop_3.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">New 'POS Orders' section in the portal.</p>
+      </div>
+    </div>
 
-    <section class="oe_container" id="features">
-        <div class="oe_row oe_spaced">
-            <h2 class="oe_slogan">Key Features</h2>
-            <div class="oe_span6">
-                <div class="oe_demo oe_picture oe_screenshot">
-                    <img src="develop_1.png">
-                </div>
-                <ul>
-                    <li><b>Customer-Friendly Order Interface:</b> Intuitive portal page for easy product selection and quantity adjustment.</li>
-                    <li><b>Real-time Product List:</b> Customers see products marked "Available in PoS" from your catalog.</li>
-                    <li><b>Automatic Pricelist & Tax Application:</b> Orders respect customer-specific pricelists and applicable taxes (based on your Odoo configuration).</li>
-                </ul>
-            </div>
-            <div class="oe_span6">
-                <div class="oe_demo oe_picture oe_screenshot">
-                    <img src="develop_2.png">
-                </div>
-                <ul>
-                    <li><b>Direct POS Order Creation:</b> Submitted orders are automatically created as Draft POS Orders in your Odoo backend.</li>
-                    <li><b>Order History in Portal:</b> Customers can view their past POS orders directly from their portal account.</li>
-                    <li><b>Seamless User Experience:</b> Fully integrated with Odoo's native portal design.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- Screenshot Row 2 -->
+    <div class="oe_row" style="margin-top: 20px;">
+      <div class="oe_span4">
+        <img src="develop_4.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">Draft POS orders in the Odoo backend.</p>
+      </div>
+      <div class="oe_span4">
+        <img src="develop_5.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">'Available in PoS' product setting.</p>
+      </div>
+      <div class="oe_span4">
+        <img src="develop_6.png" style="max-width: 100%; height: auto; max-height: 220px; display: block; margin: 0 auto;">
+        <p class="text-center">Ensure an open POS session.</p>
+      </div>
+    </div>
 
-    <section class="oe_container oe_dark">
-        <div class="oe_row oe_spaced">
-            <h2 class="oe_slogan">Benefits</h2>
-            <div class="oe_span12">
-                <ul>
-                    <li><b>Enhance Customer Satisfaction:</b> Provide 24/7 self-service convenience.</li>
-                    <li><b>Increase Efficiency:</b> Reduce staff workload for order taking and data entry.</li>
-                    <li><b>Streamline Operations:</b> Automate the creation of POS orders.</li>
-                    <li><b>Improve Accuracy:</b> Minimize errors from manual order transcription.</li>
-                    <li><b>Boost Sales:</b> Make it easier for customers to place repeat orders.</li>
-                    <li><b>Better Data:</b> Gain insights into customer ordering patterns.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="oe_container">
-        <div class="oe_row oe_spaced">
-            <h2 class="oe_slogan">Usage</h2>
-            <div class="oe_span12">
-                <ol>
-                    <li>Install the <b>POS Portal Integration</b> module.</li>
-                    <li>Ensure your POS configuration is set up and there is an open POS session.</li>
-                    <li>Mark products intended for portal ordering as <b>Available in PoS</b>.</li>
-                    <li>Customers will see a new <b>POS Orders</b> section in their portal dashboard.</li>
-                    <li>They can click <b>New POS Order</b>, select products and quantities, and submit.</li>
-                    <li>The order will appear in your Odoo backend under <b>Point of Sale > Orders</b>.</li>
-                    <li>POS staff can then process these draft orders as usual.</li>
-                </ol>
-            </div>
-        </div>
-    </section>
-
-    <section class="oe_container">
-        <div class="oe_row oe_spaced">
-            <h2 class="oe_slogan">Screenshots</h2>
-            <div class="oe_span4">
-                <img src="develop_1.png">
-                <p class="text-center">Product selection in the customer portal.</p>
-            </div>
-            <div class="oe_span4">
-                <img src="develop_2.png">
-                <p class="text-center">Order confirmation and summary.</p>
-            </div>
-            <div class="oe_span4">
-                <img src="develop_3.png">
-                <p class="text-center">New 'POS Orders' section in the portal.</p>
-            </div>
-            <div class="oe_span4">
-                <img src="develop_4.png">
-                <p class="text-center">Draft POS orders in the Odoo backend.</p>
-            </div>
-            <div class="oe_span4">
-                <img src="develop_5.png">
-                <p class="text-center">'Available in PoS' product setting.</p>
-            </div>
-            <div class="oe_span4">
-                <img src="develop_6.png">
-                <p class="text-center">Ensure an open POS session.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="oe_container">
-        <div class="oe_row oe_spaced">
-            <h2 class="oe_slogan">Support & Contact</h2>
-            <div class="oe_span12 support-info">
-                <p>
-                    For any queries, support, or custom development requests, please don't hesitate to reach out!
-                </p>
-                <p>
-                    <a href="mailto:mahokazsilas@gmail.com">mahokazsilas@gmail.com</a>
-                </p>
-                <p>
-                    We are committed to providing excellent support and ensuring this module meets your business needs.
-                </p>
-            </div>
-        </div>
-    </section>
-</body>
-</html>
+  </div>
+</section>
