@@ -57,12 +57,12 @@
         'static/description/icon.png', # Your module's icon
         'static/description/banner.png', # Optional: A banner image for the top of the listing
         'static/description/index.html',
-        'static/description/screenshots/screenshot_1.png',
-        'static/description/screenshots/screenshot_2.png',
-        'static/description/screenshots/screenshot_3.png',
-        'static/description/screenshots/screenshot_4.png',
-        'static/description/screenshots/screenshot_5.png',
-        'static/description/screenshots/screenshot_6.png',
+        'static/description/screenshot_1.png',
+        'static/description/screenshot_2.png',
+        'static/description/screenshot_3.png',
+        'static/description/screenshot_4.png',
+        'static/description/screenshot_5.png',
+        'static/description/screenshot_6.png',
     ],
     'installable': True,
     'application': True, # Mark as an application if it's a major feature, not just a small technical module
